@@ -7,9 +7,7 @@
                     <li v-for="(mensagem, index) in mensagens" :key="index">
                         <span class="date" v-if="mensagem.data">{{ mensagem.data }}</span>
                         <span class="name" v-if="mensagem.usuario">{{ mensagem.usuario.nome }}:</span>
-                        <span class="text">
-                            {{ mensagem.texto }}
-                        </span>
+                        <span class="text" v-html="mensagem.texto"></span>
                     </li>
                 </ul>
             </div>
@@ -64,13 +62,13 @@ export default {
                 reconnection: true,
                 reconnectionDelay: 1000,
                 reconnectionDelayMax : 5000,
-                reconnectionAttempts: Infinity
+                reconnectionAttempts: Infinity,
+                query: { token: localStorage.token }
             });
             // let notificacoes = document.querySelector("#notificacoes");
             // let situacao = document.querySelector("#situacao");
             
             vm.socket.on("connect", function() {
-                console.log("Conectado") // eslint-disable-line no-console 
                 vm.connected = true
             })
             
