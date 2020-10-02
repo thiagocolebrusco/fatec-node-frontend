@@ -6,7 +6,7 @@ import router from './router'
 import axios from 'axios'
 
 let my_axios = axios.create({
-  baseURL: "http://localhost:3000"
+  baseURL: "http://localhost:8000"
 })
 
 

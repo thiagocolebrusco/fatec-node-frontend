@@ -4,7 +4,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/HelloWorld'
 import Login from '@/components/pages/login/index'
-import Chat from '@/components/pages/chat/chat'
+import Socket from '@/components/pages/socket/socket'
 import ProdutosListar from '@/components/pages/produtos/listar'
 
 
@@ -23,8 +23,8 @@ export default new Router({
         beforeEnter: requireAuth,
     },
     {
-        path: '/chat',
-        component: Chat,
+        path: '/socket',
+        component: Socket,
         beforeEnter: requireAuth,
     },
     {

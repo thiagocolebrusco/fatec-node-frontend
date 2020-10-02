@@ -9,7 +9,7 @@
             <b-col>
                 <b-table striped :items="items" :fields="fields">
                     <template v-slot:cell(imagem)="data">
-                        <img :src="'http://localhost:3000/' + data.value" width="100" />
+                        <img :src="'http://localhost:8000/uploads/' + data.value" width="100" />
                     </template>
                 </b-table>
             </b-col>
@@ -23,7 +23,7 @@
 export default {
     data() {
         return{
-            fields: ['nome', 'valor', 'imagem'],
+            fields: ['nome', 'preco', 'imagem'],
             items: []
         }
     },
